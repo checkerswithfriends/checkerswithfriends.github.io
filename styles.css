@@ -1,0 +1,178 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+@font-face {
+    font-family: 'Uni Sans Heavy CAPS';
+    src: url('UniSansHeavyCAPS.woff2') format('woff2'),
+        url('UniSansHeavyCAPS.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Definitions */
+:root {
+	--font: 'Poppins', Arial, Sans-serif;
+	--book: 400;
+	--bold: 500;
+	--notQuiteBlack: #23272A;
+	--greyple: #99AAB5;
+	--stock: .15s;
+}
+
+/* Reset */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Main */
+html, body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	
+	box-sizing: border-box;
+	
+	background-color: var(--notQuiteBlack);
+	background-image: url('wave.svg');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: fixed;
+	
+	font-family: var(--font);
+	
+	color: white;
+	
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+}
+
+div#game-wrapper {	
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+div#title h1 {
+	font-family: 'Uni Sans Heavy CAPS';
+	font-size: 42px;
+	
+	text-transform: uppercase;
+}
+
+div#title p {
+	font-size: 13px;
+	float: right;
+}
+
+div#game-wrapper div#game-wrapper-top {
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+div#game-wrapper div#game-container {
+	background-color: black;
+	width: 480px;
+	height: 480px;
+	
+	padding: 20px;
+}
+
+div#game-wrapper div#game-container div div.row {
+	width: 100%;
+}
+
+div#game-wrapper div#game-container div div.row div.square {
+	float: left;
+	width: 60px;
+	height: 60px;
+}
+
+div#game-wrapper div#game-container div div.row div.square:hover {
+	cursor: pointer;
+	opacity: 0.85;
+}
+
+div#game-wrapper div#game-container div div.row div.square div.circle {
+	border-radius: 50%;
+	width: 94%;
+	height: 94%;
+	margin: 3%;
+	color: black;
+	text-align: center;
+	line-height: 56px;
+}
+
+div#game-wrapper div#game-stats {
+	background-color: black;
+	
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	
+	padding: 30px 20px;
+	
+	width: 480px;
+}
+
+div#game-wrapper div#game-stats div {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	line-height: normal;
+}
+
+div#game-wrapper div#game-stats div#game-stats-turn {
+	font-size: 16px;
+	font-weight: var(--bold);
+	
+	padding-bottom: 15px;
+}
+
+div#game-wrapper div#game-stats div#game-stats-score {
+	font-size: 14px;
+	font-weight: var(--book);
+	color: var(--greyple);
+}
+
+div#game-wrapper div#game-wrapper-bottom h3 {
+	font-size: 11px;
+	font-weight: var(--book);
+}

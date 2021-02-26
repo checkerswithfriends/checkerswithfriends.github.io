@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="ng-CWF">
+<head>
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
+	<title>Checkers with Friends</title>
+	<link rel="stylesheet" href="styles.css" media="screen" />
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js" integrity="sha512-7oYXeK0OxTFxndh0erL8FsjGvrl2VMDor6fVqzlLGfwOQQqTbYsGPv4ZZ15QHfSk80doyaM0ZJdvkyDcVO7KFA==" crossorigin="anonymous"></script>
+	<script src="scripts.js"></script>
+</head>
+
+<body ng-controller="CWF-controller">
+	<div id="game-wrapper">
+		<div id="title">
+			<h1>Checkers with Friends</h1>
+			<p>.github.io</p>
+		</div>
+		<div id="game-wrapper-top">
+			<div id="game-container">
+				<div>
+					<div class="row" ng-repeat="row in board">
+						<div class="square" ng-style="setClass(square)" ng-repeat="square in row track by $index" ng-click="select(square)">
+							<div ng-style="setStyling(square)" class="circle">
+								<span>{{square.isKing ? 'K' : ''}}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="game-stats">
+				<div id="game-stats-turn">It's {{player}}'s turn.</div>
+				<div id="game-stats-score">Red: {{redScore}}&emsp;|&emsp;Black: {{blackScore}}</div>
+			</div>
+		</div>
+		<div id="game-wrapper-bottom">
+			<h3>Made with ❤️ by Gregory Lim.</h3>
+		</div>
+	</div>
+</body>
+</html>
